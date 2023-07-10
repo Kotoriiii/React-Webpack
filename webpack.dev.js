@@ -8,8 +8,8 @@ module.exports = {
     entry: path.join(__dirname, './src/index.js'),
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'js/[name]_[contenthash].js',
-        chunkFilename: 'css/[id].[contenthash].css',
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[name].js',
     },
     module: {
         rules: [
@@ -57,8 +57,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename:'css/[name].[contenthash].css',
-            chunkFilename: 'css/[id].[contenthash].css',
+            filename:'css/[name].css',
+            chunkFilename: 'css/[id].css',
             ignoreOrder: false,
         }),
         new HtmlWebpackPlugin({
@@ -68,9 +68,6 @@ module.exports = {
     devServer: {
         hot: true,
         open: true,
-        devMiddleware: {
-            writeToDisk: true,
-        },
     },
     devtool: 'source-map',
 }

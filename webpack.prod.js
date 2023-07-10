@@ -11,12 +11,12 @@ module.exports = {
     output: {
         path: path.join(__dirname, './release'),
         filename: 'js/[name]_[contenthash].js',
-        chunkFilename: 'css/[id].[contenthash].css',
+        chunkFilename: 'js/[id].[contenthash].js',
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx)?$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -35,7 +35,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.scss$/,
+                test: /\.(css|scss)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',{
                     loader: 'postcss-loader',
                     options: {
@@ -72,7 +72,7 @@ module.exports = {
                 test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
                 priority: 100,
             },
-            autd: {
+            antd: {
                 name: 'antd',
                 chunks: 'all',
                 test: /[\\/]node_modules[\\/](antd)[\\/]/,
