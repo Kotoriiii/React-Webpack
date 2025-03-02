@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",          // 编译为最新 ES 标准
+    "module": "ESNext",          // 使用 ESM 模块系统
+    "lib": ["DOM", "ESNext"],    // 包含浏览器和 ES 特性类型定义
+    "jsx": "react-jsx",          // 启用 React JSX 编译
+    "moduleResolution": "node",  // 模块解析方式为 Node.js 风格
+    "baseUrl": "./src",          // 基础路径（配合路径别名）
+    "paths": {
+      "@/*": ["./*"]             // 路径别名（如 import '@/components/Button'）
+    },
+    "strict": true,              // 启用严格类型检查
+    "esModuleInterop": true,     // 兼容 CommonJS/ESM 模块导入
+    "skipLibCheck": true         // 跳过第三方库类型检查（提升编译速度）                            /* Skip type checking all .d.ts files. */
+  },
+  "include": ["src/**/*"],       // 包含的源码目录
+  "exclude": ["node_modules"]    // 排除的目录
+}
